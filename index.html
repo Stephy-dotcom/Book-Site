@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- fav icon -->
+    <link rel="icon" type="image/png"
+        href="https://files.oaiusercontent.com/file-MqdhiaU6zIiBNHaG6QGvfJqa?se=2024-08-15T07%3A05%3A20Z&sp=r&sv=2023-11-03&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D332cd46b-b247-407e-b3aa-87a45e00f849.webp&sig=DSO6FcIVf/AgEPhxES%2BJ0bKFDWf/79JhRupzxk54Qsg%3D">
+    <!-- bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- googlefont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Amita:wght@400;700&family=Arizonia&family=Caesar+Dressing&family=Chewy&family=Condiment&family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Fruktur:ital@0;1&family=Goudy+Bookletter+1911&family=Grey+Qo&family=Homemade+Apple&family=Katibeh&family=Kaushan+Script&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lugrasimo&family=Madimi+One&family=Matemasie&family=Mr+De+Haviland&family=Niconne&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&family=Platypi:ital,wght@0,300..800;1,300..800&family=Potta+One&family=Protest+Revolution&family=Redressed&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ruthie&family=Seaweed+Script&family=Smooch&family=Sriracha&family=Whisper&family=Zhi+Mang+Xing&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- marquee -->
+    <div class="a">
+        <marquee behavior="" direction="left" width="70%">
+            <p style="font-family: Seaweed Script, cursive; font-size: xx-large;"> LitVerse - "Where stories unfold, and
+                imagination thrives in every page."</p>
+        </marquee>
+    </div>
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <img id="logo"
+                src="https://files.oaiusercontent.com/file-MqdhiaU6zIiBNHaG6QGvfJqa?se=2024-08-15T07%3A05%3A20Z&sp=r&sv=2023-11-03&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D332cd46b-b247-407e-b3aa-87a45e00f849.webp&sig=DSO6FcIVf/AgEPhxES%2BJ0bKFDWf/79JhRupzxk54Qsg%3D"
+                alt="" class="ms-5">
+            <p id="p" class="m-4">LitVerse</p>
+            <!-- search  -->
+            <div class="InputContainer m-5 ">
+                <input type="text" name="text" class="input" id="input"
+                    placeholder="Search by Title, Author, keyword...">
+
+                <label for="input" class="labelforsearch ">
+                    <svg viewBox="0 0 512 512" class="searchIcon">
+                        <path
+                            d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z">
+                        </path>
+                    </svg>
+                </label>
+                <div class="border"></div>
+
+                <button class="micButton"><svg viewBox="0 0 384 512" class="micIcon">
+                        <path
+                            d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 89.1 66.2 162.7 152 174.4V464H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h72 72c13.3 0 24-10.7 24-24s-10.7-24-24-24H216V430.4c85.8-11.7 152-85.3 152-174.4V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 70.7-57.3 128-128 128s-128-57.3-128-128V216z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <!--Menu bar  -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Gallery"><i class="fa-regular fa-image" style="color: #2f4f4f;"></i>
+                            Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#About"><i class="fa-regular fa-user" style="color: #2f4f4f;"></i>
+                            About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Contact"><i class="fa-solid fa-phone" style="color: #2f4f4f;"></i>
+                            Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-regular fa-heart" style="color: #2f4f4f;"></i>
+                            Wishlist</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <hr>
+    <!-- 8 categories -->
+    <section>
+        <ul class="nav justify-content-center">
+            <li class="nav-items">
+                <a class="nav-links" href="#">&nbsp;&nbsp;&nbsp;Books &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;||</a>
+            </li>
+            <li class="nav-items">
+                <a class="nav-links" href="#">&nbsp;&nbsp;&nbsp;Fiction &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+            </li>
+            <li class="nav-items">
+                <a class="nav-links" href="#">&nbsp;&nbsp;&nbsp;Nonfiction &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+            </li>
+            <li class="nav-items">
+                <a class="nav-links" href="#">&nbsp;&nbsp;&nbsp;eBooks &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+            </li>
+            <li class="nav-items">
+                <a class="nav-links" href="#">&nbsp;&nbsp;&nbsp;Audiobooks &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+            </li>
+            </li>
+            <li class="nav-items">
+                <a class="nav-links" href="#">&nbsp;&nbsp;&nbsp;Teens & YA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+            </li>
+            <li class="nav-items">
+                <a class="nav-links" href="#">&nbsp;&nbsp;&nbsp;Kids &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+            </li>
+            <li class="nav-items">
+                <a class="nav-links" href="#">&nbsp;&nbsp;&nbsp;Games</a>
+            </li>
+        </ul>
+    </section><br><br>
+    <!-- banner-->
+    <section>
+        <img src="https://dispatch.barnesandnoble.com/content/dam/ccr/homepage/daily/2024/07/30/30048_Quote_A1_BookClubAugust_07_30_24.jpg"
+            alt="" width="100%" height="600px">
+    </section><br><br>
+    <!-- Best sellers -->
+    <section>
+        <p class="name">Bestsellers...</p>
+        <br><br>
+        <div class="row">
+            <!-- 1 -->
+            <div class="card" style="width:200px; height: 420px;">
+                <img src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781649374073_p0_v3%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                    class="card-img-top" alt="..." width="200px" height="250px">
+                <div class="card-body">
+                    <p class="card-text">Holly Library</p>
+                    <p class="card-text">Rs 400</p>
+                    <button type="button" class="btn btn-secondary">QUICK ADD</button>
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="card" style="width:200px; height: 420px;">
+                <img src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781649374189_p0_v8%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                    class="card-img-top" alt="..." width="200px" height="250px">
+                <div class="card-body">
+                    <p class="card-text">Onyx Storm</p>
+                    <p class="card-text">Rs 500</p>
+                    <button type="button" class="btn btn-secondary">QUICK ADD</button>
+                </div>
+            </div>
+            <!-- 3 -->
+            <div class="card" style="width:200px; height: 420px;">
+                <img src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781368104807_p0_v17%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                    class="card-img-top" alt="..." width="200px" height="250px">
+                <div class="card-body">
+                    <p class="card-text">The Book of Bill</p>
+                    <p class="card-text">Rs 499</p>
+                    <button type="button" class="btn btn-secondary">QUICK ADD</button>
+                </div>
+            </div>
+            <!-- 4 -->
+            <div class="card" style="width:200px; height: 420px;">
+                <img src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780765389220_p0_v2%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                    class="card-img-top" alt="..." width="200px" height="250px">
+                <div class="card-body">
+                    <p class="card-text">Starter Villain</p>
+                    <p class="card-text">Rs 545</p>
+                    <button type="button" class="btn btn-secondary">QUICK ADD</button>
+                </div>
+            </div>
+            <!-- 5 -->
+            <div class="card" style="width:200px; height: 420px;">
+                <img src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781649377371_p0_v2%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                    class="card-img-top" alt="..." width="200px" height="250px">
+                <div class="card-body">
+                    <p class="card-text">Fourth Wing</p>
+                    <p class="card-text">Rs 399</p>
+                    <button type="button" class="btn btn-secondary">QUICK ADD</button>
+                </div>
+            </div>
+            <!-- 6 -->
+            <div class="card" style="width:200px; height:420px;">
+                <img src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781668090695_p0_v1%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                    class="card-img-top" alt="..." width="200px" height="250px">
+                <div class="card-body">
+                    <p class="card-text">How to Giggle</p>
+                    <p class="card-text">Rs 600</p>
+                    <button type="button" class="btn btn-secondary">QUICK ADD</button>
+                </div>
+            </div>
+            <!-- 7 -->
+            <div class="card" style="width:200px; height: 420px;">
+                <img src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781649375704_p0_v4%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                    class="card-img-top" alt="..." width="200px" height="250px">
+                <div class="card-body">
+                    <p class="card-text">Heavenbreaker</p>
+                    <p class="card-text">Rs 300</p>
+                    <button type="button" class="btn btn-secondary">QUICK ADD</button>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="row">
+            <!-- 8 -->
+            <div class="card" style="width:200px; height: 420px;">
+                <img src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781250328137_p0_v5%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                    class="card-img-top" alt="..." width="200px" height="250px">
+                <div class="card-body">
+                    <p class="card-text">The Grey Wolf</p>
+                    <p class="card-text">Rs 350</p>
+                    <button type="button" class="btn btn-secondary">QUICK ADD</button>
+                </div>
+            </div>
+            <!-- 9 -->
+            <div class="card" style="width:200px; height: 420px;">
+                <img src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780374608514_p0_v3%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                    class="card-img-top" alt="..." width="200px" height="250px">
+                <div class="card-body">
+                    <p class="card-text">Intermezzo</p>
+                    <p class="card-text">Rs 500</p>
+                    <button type="button" class="btn btn-secondary">QUICK ADD</button>
+                </div>
+            </div>
+            <!-- 10 -->
+            <div class="card" style="width:200px; height: 420px;">
+                <img src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781464236730_p0_v4%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                    class="card-img-top" alt="..." width="200px" height="250px">
+                <div class="card-body">
+                    <p class="card-text">The Striker</p>
+                    <p class="card-text">Rs 269</p>
+                    <button type="button" class="btn btn-secondary">QUICK ADD</button>
+                </div>
+            </div>
+            <!-- 11 -->
+            <div class="card" style="width:200px; height: 420px;">
+                <img src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780711285798_p0_v4%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                    class="card-img-top" alt="..." width="200px" height="250px">
+                <div class="card-body">
+                    <p class="card-text">Simone Biles</p>
+                    <p class="card-text">Rs 545</p>
+                    <button type="button" class="btn btn-secondary">QUICK ADD</button>
+                </div>
+            </div>
+            <!-- 12 -->
+            <div class="card" style="width:200px; height: 420px;">
+                <img src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781668060209_p0_v5%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                    class="card-img-top" alt="..." width="200px" height="250px">
+                <div class="card-body">
+                    <p class="card-text">Just Add Water</p>
+                    <p class="card-text">Rs 499</p>
+                    <button type="button" class="btn btn-secondary">QUICK ADD</button>
+                </div>
+            </div>
+            <!-- 13 -->
+            <div class="card" style="width:200px; height:420px;">
+                <img src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780374614058_p0_v1%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                    class="card-img-top" alt="..." width="200px" height="250px">
+                <div class="card-body">
+                    <p class="card-text">Loud</p>
+                    <p class="card-text">Rs 500</p>
+                    <button type="button" class="btn btn-secondary">QUICK ADD</button>
+                </div>
+            </div>
+            <!-- 14 -->
+            <div class="card" style="width:200px; height: 420px;">
+                <img src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780593241257_p0_v3%5D&call=url%5Bfile:common/decodeProduct.chain%5D"
+                    class="card-img-top" alt="..." width="200px" height="250px">
+                <div class="card-body">
+                    <p class="card-text">Liars</p>
+                    <p class="card-text">Rs 390</p>
+                    <button type="button" class="btn btn-secondary">QUICK ADD</button>
+
+                </div>
+            </div>
+        </div>
+    </section><br><br><br>
+    <!-- Gallery  -->
+    <section id="Gallery">
+        <hr>
+        <p class="menu">Gallery </p>
+        <hr>
+        <p class="sub">Fiction...</p>
+        <div class="row">
+            <!-- 1 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/71If19m2RXL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">A Little Life</p>
+                    <p class="card-text">Author: Hanya Yanagihara </p>
+                    <p class="card-text">Rs 300 </p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/81OkWjcf4WL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">The Nightingale</p>
+                    <p class="card-text">Author:Kristin Hannah</p>
+                    <p class="card-text">Rs 499 </p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW </button>
+                </div>
+            </div>
+            <!-- 3 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/91Yb6fD29xL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">The Lost Bookshop</p>
+                    <p class="card-text">Author:Evie Woods</p>
+                    <p class="card-text">Rs 399 </p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+            <!-- 4 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/71BLvwqqYSL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">Takedown</p>
+                    <p class="card-text">Author:L.T. Ryan</p>
+                    <p class="card-text">Rs 600 </p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+            <!-- 5 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/919KC5sYjML._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">After Dunkirk</p>
+                    <p class="card-text">Author: Lee Jackson</p>
+                    <p class="card-text">Rs 300 </p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+        </div><br><br><br>
+        <div class="row">
+            <!-- 6 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/91LLOcvp0aL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">The Briar Club</p>
+                    <p class="card-text">Author:Kate Quinn
+                    </p>
+                    <p class="card-text">Rs 299 </p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+            <!-- 7 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/81JmI553DbL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">Before We Were Yours</p>
+                    <p class="card-text">Author:Lisa Wingate</p>
+                    <p class="card-text">Rs 599</p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+            <!-- 8 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/71nOObYJACL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">The Silent Ones</p>
+                    <p class="card-text">Author:K.L. Slater</p>
+                    <p class="card-text">Rs 354</p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+            <!-- 9 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/71xbsDGwAEL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">Lessons in Chemistry</p>
+                    <p class="card-text">Author:Bonnie Garmus</p>
+                    <p class="card-text">Rs 599 </p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+            <!-- 10 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/71bSVuBd7IL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">In Five years</p>
+                    <p class="card-text">Author:Rebecca Serle</p>
+                    <p class="card-text">Rs 367 </p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+        </div><br><br>
+        <!-- Non Fiction -->
+        <hr>
+        <br><br><br>
+        <p class="sub">Non Fiction...</p><br><br>
+        <div class="row">
+            <!-- 1 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/61GavD6RKHL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">Wounded Tiger</p>
+                    <p class="card-text">Author: T. Martin Bennett </p>
+                    <p class="card-text">Rs 239 </p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/616MmaUYWJL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">Master Your Emotions</p>
+                    <p class="card-text">Author:Thibaut Meurisse</p>
+                    <p class="card-text">Rs 567 </p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW </button>
+                </div>
+            </div>
+            <!-- 3 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/81GOdrpB6hL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">Behave</p>
+                    <p class="card-text">Author:Robert M. Sapolsky</p>
+                    <p class="card-text">Rs 427 </p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+            <!-- 4 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/81DP1bQCENL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">The Company</p>
+                    <p class="card-text">Author:Stephen Bown</p>
+                    <p class="card-text">Rs 578 </p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+            <!-- 5 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/71Wn-1vCP9L._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">Messi</p>
+                    <p class="card-text">Author:Steve Herman</p>
+                    <p class="card-text">Rs 544</p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+        </div><br><br><br>
+        <div class="row">
+            <!-- 6 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/911EC-BamFL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">The Golden Spruse</p>
+                    <p class="card-text">Author:John Vaillant</p>
+                    <p class="card-text">Rs 199</p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+            <!-- 7 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/81PJvHAc0lL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">438 Days</p>
+                    <p class="card-text">Author:Jonathan Franklin</p>
+                    <p class="card-text">Rs 418 </p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+            <!-- 8 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/81-EP50zLrL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">In Order to Live</p>
+                    <p class="card-text">Author:Yeonmi Park</p>
+                    <p class="card-text">Rs 409 </p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+            <!-- 9 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/61f+m0cDYEL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">The Guns of August</p>
+                    <p class="card-text">Author:Barbara W. Tuchman</p>
+                    <p class="card-text">Rs 400</p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+            <!-- 10 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/71pljPN0qBL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">Feel & Think like a pineapple</p>
+                    <p class="card-text">Author:Mr. Pineapple</p>
+                    <p class="card-text">Rs 600 </p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+        </div><br><br>
+        <!-- Biographies -->
+        <hr><br><br>
+        <p class="sub">Biographies...</p><br><br>
+        <div class="row">
+            <!-- 1 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/71PP5Wc5lcL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">Benjamin Franklin</p>
+                    <p class="card-text">Author:Benjamin Franklin</p>
+                    <p class="card-text">Rs 478</p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/71PP5Wc5lcL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">Thomas Edison </p>
+                    <p class="card-text">Author:Thomas A. Edison</p>
+                    <p class="card-text">Rs 500</p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW </button>
+                </div>
+            </div>
+            <!-- 3 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/71ErAIr8L4L._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">Victor</p>
+                    <p class="card-text">Author:Víctor Torres</p>
+                    <p class="card-text">Rs 558</p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+            <!-- 4 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/81UU+vkVUfL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">My Effin' Life</p>
+                    <p class="card-text">Author:Geddy Lee</p>
+                    <p class="card-text">Rs 312 </p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+            <!-- 5 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/81tdvyI0MeL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">A Memoir</p>
+                    <p class="card-text">Author:Matthew Perry</p>
+                    <p class="card-text">Rs 478 </p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+        </div><br><br><br>
+        <div class="row">
+            <!-- 6 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/81Kaj5++6pL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">Elon Musk</p>
+                    <p class="card-text">Author:Walter Isaacson</p>
+                    <p class="card-text">Rs 412</p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+            <!-- 7 -->
+            <div class="card" style="width:300px; height: 570px;">
+
+                <img src="https://m.media-amazon.com/images/I/61sJcwkpWCL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">If You Ask Me</p>
+                    <p class="card-text">Author:Betty White</p>
+                    <p class="card-text">Rs 324 </p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+            <!-- 8 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/91OTRnSgliL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">Robin</p>
+                    <p class="card-text">Author:Dave Itzkoff</p>
+                    <p class="card-text">Rs 205 </p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+            <!-- 9 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/81S3kmiWdEL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">Bourdain</p>
+                    <p class="card-text">Author:Laurie Woolever</p>
+                    <p class="card-text">Rs 589</p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+            <!-- 10 -->
+            <div class="card" style="width:300px; height: 570px;">
+                <img src="https://m.media-amazon.com/images/I/61BWsc9eGbL._AC_UL320_.jpg" class="card-img-top" alt="..."
+                    width="300px" height="350px">
+                <div class="card-body">
+                    <p class="card-text">The Women in Me</p>
+                    <p class="card-text">Author:Britney Spears</p>
+                    <p class="card-text">Rs 548</p>
+                    <button type="button" class="btn btn-success ms-5">BUY NOW</button>
+                </div>
+            </div>
+        </div><br><br>
+        <hr>
+    </section>
+    <!-- About -->
+    <section id="About">
+
+        <p class="menu">About </p>
+        <hr>
+        <br>
+        <p class="about"><span>LitVerse</span>, where stories unfold like constellations in a boundless literary
+            universe. Here, we believe that every book is a star, each shining with its own brilliance, waiting to be
+            discovered. Whether you're an avid reader, an occasional explorer of stories, or someone seeking the next
+            tale to dive into, LitVerse is your gateway to a world of limitless imagination. </p>
+
+        <p class="about"> At LitVerse, we’ve created a space that merges the beauty of literature with the wonder of the
+            cosmos. Picture galaxies of books, each one orbiting around genres, themes, and narratives that captivate
+            and inspire. Here, every genre is a galaxy of its own—mystery, science fiction, fantasy, romance—each
+            offering a universe of possibilities to explore.
+
+            Discover books through curated journeys, taking you across different genres, authors, and eras. Our platform
+            allows you to chart your own literary constellation, connecting the books that have shaped your world. As
+            you navigate through LitVerse, you’ll encounter recommendations, reading paths, and community discussions
+            that deepen your connection to the stories you love.</p>
+
+        <p class="about"> LitVerse is more than just a website; it's a community of fellow readers, writers, and
+            dreamers who share a passion for the written word. Join virtual book clubs, participate in forums, and
+            engage with a vibrant community that celebrates every story as a star in the sky. Whether you're looking for
+            your next great read or simply wish to connect with like-minded readers, LitVerse is your home in the
+            literary cosmos.
+
+            Step into LitVerse, where the universe of stories is infinite, and every tale is a new world to explore.</p>
+        <div class="i">
+            <div class="ii">
+                <img src="https://images.adsttc.com/media/images/573c/90c0/e58e/ce1e/1600/0007/newsletter/Here_is_a_theater_to_unfold_an_outstanding_drama__and_the_characters_are_book_lovers_sitting_on_the_soft_couch_or_standing_beside_the_bookshelves._0004.jpg?1463587001"
+                    alt="">
+            </div>
+            <div class="ii">
+                <img src="https://firstclasse.com.my/wp-content/uploads/2022/08/Main-Feature-min-3-1536x1024.png"
+                    alt="">
+            </div>
+            <div class="ii">
+                <img src="https://storage.googleapis.com/buro-malaysia-storage/www.buro247.my/2022/01/2b9c9e88-1657372122669652-scaled.jpeg"
+                    alt="">
+            </div>
+        </div><br><br>
+        <p class="about">LitVerse was co-founded by two passionate individuals who shared a deep love for literature and
+            a vision to create a unique space for readers. They combined their expertise in technology and storytelling
+            to build a platform that goes beyond the conventional, offering an immersive and community-driven experience
+            for book lovers everywhere.</p><br>
+        <div class="i">
+            <div class="ii">
+                <img src="https://www.818agency.com/wp-content/uploads/2018/12/Sarah-McNally-Mcnally-Jackson-Books-Goods-for-the-Study.jpg"
+                    alt="">
+                <p class="founders">McNally Jackson</p>
+            </div>
+            <div class="ii">
+                <img src="https://i.harperapps.com/authors/20650/x500.JPG" alt="">
+                <p class="founders">Ann Patchett</p>
+            </div>
+        </div>
+        <br>
+        <hr><br>
+        <p class="sub">Our History...</p>
+        <br>
+        <p class="about">
+            LitVerse was born out of a love for both literature and the infinite possibilities of imagination. The idea
+            sparked in early 2020, when a group of avid readers and tech enthusiasts came together, united by a common
+            passion for storytelling. The vision was simple: create a space where readers could not only discover new
+            books but also explore them in a way that felt as vast and interconnected as the universe itself.</p>
+
+        <p class="about">The name "LitVerse" emerged from this fusion of ideas—a blend of "literature" and "universe."
+            It perfectly captured the concept of a limitless, ever-expanding world of stories, where each book is a star
+            waiting to be discovered. The founders envisioned LitVerse as a place where every reader could find their
+            own path through the literary cosmos, connecting stories, authors, and genres like constellations in the
+            night sky.
+
+            In the early stages, LitVerse was a small, community-driven project, focusing on curated reading journeys
+            and personalized book recommendations. However, as more readers joined the platform, it quickly grew into a
+            thriving literary hub. The introduction of features like virtual book clubs, author spotlights, and themed
+            reading challenges helped solidify LitVerse's place as a unique and innovative space in the online literary
+            world.</p>
+
+        <p class="about">By combining the boundless curiosity of readers with the vastness of the literary landscape,
+            LitVerse has become a beacon for those who seek more than just a book—they seek an experience, a journey
+            through the many worlds that stories offer. Today, LitVerse continues to grow, connecting readers across the
+            globe and creating a community where every story is celebrated as part of the ever-expanding LitVerse.</p>
+        <br>
+        <hr>
+        <br>
+        <p class="sub">What makes it unique??</p>
+        <br>
+        <p class="about">
+            What sets LitVerse apart is its seamless blend of literature and cosmic wonder. Unlike traditional book
+            websites, LitVerse offers an immersive experience where readers don't just find books—they explore a
+            universe of stories. The concept of books as stars in a vast literary cosmos gives LitVerse a unique
+            identity, transforming the act of discovering new reads into a journey through interconnected worlds of
+            imagination.
+
+            LitVerse’s design goes beyond mere listings and reviews. The platform is crafted to evoke a sense of
+            exploration, with genres represented as galaxies and authors as constellations. This thematic approach
+            invites users to wander through different realms of storytelling, making each visit feel like a new
+            adventure rather than a routine search for a book. The idea that every reader can chart their own literary
+            constellation, connecting books in a personal, meaningful way, adds a layer of personalization that is both
+            engaging and distinctive.
+        </p>
+        <p class="about">
+            Moreover, LitVerse fosters a vibrant community where readers can connect through virtual book clubs,
+            participate in discussions, and share their literary journeys. This focus on community-building makes
+            LitVerse a gathering place for like-minded individuals who are passionate about stories and eager to share
+            their experiences.
+
+            LitVerse also stands out through its curated reading paths and thematic challenges, guiding users on curated
+            journeys across genres, authors, and themes. These features create an interactive experience that goes
+            beyond simply browsing titles, offering a dynamic way to engage with literature.
+
+            In essence, LitVerse is not just a book website—it’s a literary universe waiting to be explored, making it a
+            unique and captivating space for readers who crave more than just the next page.
+        </p>
+        <hr>
+    </section>
+    <br>
+    <section id="Contact">
+        <p class="menu">Contact</p>
+        <hr>
+        <div class="k">
+            <div class="kk">
+                <p class="kkk">Our Services</p>
+                <ul class="kkkk" type="none">
+                    <li>Affliate Program</li>
+                    <li>Publisher & Author Guidelines</li>
+                    <li>Bulk Order Discounts</li>
+                    <li>LitVerse Mobile Apps</li>
+                    <li>LitVerse Membership</li>
+                    <li>LitVerse Mastercard</li>
+                    <li>LitVerse Bookfairs</li>
+                    <li>LitVerse Press</li>
+                </ul>
+            </div>
+            <div class="kk">
+                <p class="kkk">About Us</p>
+                <ul class="kkkk" type="none">
+                    <li>About LitVerse</li>
+                    <li>Carees at LitVerse</li>
+                    <li>Empowering Innovation</li>
+                    <li>Inspired</li>
+                </ul>
+            </div>
+            <div class="kk">
+                <p class="kkk">Quick Help</p>
+                <ul class="kkkk" type="none">
+                    <li>Help Center</li>
+                    <li>Safety</li>
+                    <li>Shipping & Returns</li>
+                    <li>Store Pickup</li>
+                    <li>Order Status</li>
+                    <li>Product Recalls</li>
+                    <li>Corrections & Updates</li>
+                    <li>Gift Cards</li>
+                </ul>
+            </div>
+            <div class="kk">
+                <p class="kkk">Shop By Category</p>
+                <ul class="kkkk" type="none">
+                    <li>Books</li>
+                    <li>Fiction</li>
+                    <li>Nonfiction</li>
+                    <li>Kids</li>
+                    <li>Teens & YA</li>
+                    <li>eBooks</li>
+                    <li>Audiobooks</li>
+                    <li>eReaders</li>
+                </ul>
+            </div>
+            <div class="kk">
+                <p class="kkk">Follow Us</p>
+                <br><br><br><br>
+                <div class="jj">
+                    <div class="j">
+                        <p class="kkk"> <i class="fa-brands fa-facebook" style="color: #000000;"></i></p>
+                       
+                    </div>
+                    <div class="j">
+                        <p class="kkk"><i class="fa-brands fa-square-instagram" style="color: #000000;"></i></p>
+                    </div>
+                    <div class="j">
+                        <p class="kkk"><i class="fa-brands fa-square-youtube" style="color: #000000;"></i></p>
+                        
+                    </div>
+                    <div class="j">
+                        <p class="kkk"><i class="fa-brands fa-square-x-twitter" style="color: #000000;"></i></p>
+                    </div>
+                </div>
+            </div>
+        </div><hr>
+ <div class="s">
+    <p id="id">Feedback </p>
+ <div class="mb-3">
+    
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Name">
+  </div>
+  <div class="mb-3">
+    
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter Your Email">
+  </div>
+  <div class="mb-3">
+    
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter Your Message"></textarea>
+  </div>
+  <button type="button" class="btn btn-success m-3">Success</button>
+</div>
+<br>
+<p id="id">Location </p>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251482.31470835354!2d76.1361171404911!3d9.982854198002483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d514abec6bf%3A0xbd582caa5844192!2sKochi%2C%20Kerala!5e0!3m2!1sen!2sin!4v1723896467421!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+<hr>
+
+</body>
+
+</html>
